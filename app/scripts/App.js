@@ -64,7 +64,6 @@ define([
 
         var oBaseModel = new BaseModel(testdata);
 
-
         App.baseRegion.show(
             new MainCompositeView({
                 model: oBaseModel,

@@ -7,9 +7,8 @@ define([
 ], function (_, Backbone, ChildModel) {
     'use strict';
 
-    var ChildrenCollection = Backbone.Collection.extend({
+    return Backbone.Collection.extend({
         model: ChildModel
     });
 
-    return ChildrenCollection;
 });
