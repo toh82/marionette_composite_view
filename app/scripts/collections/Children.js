@@ -4,11 +4,11 @@ define([
     'underscore',
     'backbone',
     'models/Child'
-], function (_, Backbone, ChildrenModel) {
+], function (_, Backbone, ChildModel) {
     'use strict';
 
     var ChildrenCollection = Backbone.Collection.extend({
-        model: ChildrenModel
+        model: ChildModel
     });
 
     return ChildrenCollection;

@@ -3,18 +3,19 @@
 define([
     'backbone',
     'collections/Children'
-], function (Backbone, ChildrenCollection) {
+], function (Backbone, ChildCollection) {
     'use strict';
 
     return Backbone.Model.extend({
         url: '',
         initialize: function () {
-            var oChildrenCollection = new ChildrenCollection(this.get('children'));
             if (this.get('children').length !== 0) {
-                this.set({
-                    children: oChildrenCollection
-                }, {
+                var oChildCollection = new ChildCollection(this.get('children'),{
                     parent: this
+                });
+
+                this.set({
+                    children: oChildCollection
                 });
             }
         },

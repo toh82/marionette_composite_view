@@ -9,12 +9,13 @@ define([
 
     return Backbone.Model.extend({
         initialize: function () {
-            var oFieldCollection = new FieldsCollection(this.get('children'));
             if (this.get('children').length !== 0) {
+                var oFieldCollection = new FieldsCollection(this.get('children'),{
+                    parent: this
+                });
+
                 this.set({
                     children: oFieldCollection
-                }, {
-                    parent: this
                 });
             }
         }
